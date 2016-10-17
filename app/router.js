@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
     this.route('documents', function() {
         this.route('new');
+        this.route('show', { path: ":document_id"});
     });
 });
 
