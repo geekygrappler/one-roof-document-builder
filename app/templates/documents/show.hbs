@@ -1,7 +1,9 @@
 <h2>
-    {{model.title}}
+    {{model.document.title}}
 </h2>
 
-{{new-section document=model}}
+{{new-section document=model.document}}
+
+{{section-list sections=model.sections}}
 
 {{outlet}}
