@@ -1,8 +1,6 @@
 <h3>Section List</h3>
 {{#each sections as |section|}}
-    <p>
-        {{section.title}}
-    </p>
+    {{a-section section=section}}
 {{/each}}
 
 {{yield}}

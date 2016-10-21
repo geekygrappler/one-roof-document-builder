@@ -4,5 +4,6 @@ export default DS.Model.extend({
     name: DS.attr('string'),
     notes: DS.attr('string'),
     quantity: DS.attr('integer'),
-    unit: DS.attr('string')
+    unit: DS.attr('string'),
+    section: DS.belongsTo('section', { async: true })
 });
