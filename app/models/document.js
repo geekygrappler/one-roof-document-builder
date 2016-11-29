@@ -1,6 +1,7 @@
 import DS from 'ember-data';
+const { attr, hasMany } = DS;
 
 export default DS.Model.extend({
-    title: DS.attr('string'),
-    sections: DS.hasMany('section', { async: true })
+    title: attr('string'),
+    lineItems: hasMany('lineItem')
 });

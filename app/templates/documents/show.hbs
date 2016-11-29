@@ -1,9 +1,15 @@
 <h2>
-    {{model.document.title}}
+    {{model.title}}
 </h2>
 
-{{new-section document=model.document}}
+{{!-- {{new-section document=model}} --}}
 
-{{section-list sections=model.sections}}
+<div style="width: 40%; display: inline-block;">
+    {{line-item-list lineItems=model.lineItems}}
+</div>
+
+<div style="width: 50%; display: inline-block;">
+    {{line-item-list lineItems=model.lineItems}}
+</div>
 
 {{outlet}}

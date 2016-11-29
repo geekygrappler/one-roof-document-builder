@@ -1,5 +1,10 @@
 <p>
-    {{section.title}} - {{section.document}}
+    {{section.title}}
 </p>
+{{line-item-list lineItems=section.lineItems}}
+
+{{new-line-item section=section}}
+
+<hr>
 
 {{yield}}
