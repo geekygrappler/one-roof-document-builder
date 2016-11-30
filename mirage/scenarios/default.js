@@ -11,7 +11,7 @@ export default function(server) {
     let documents = server.createList('document', 5);
     //server.createList('item', 20);
     for (let document of documents) {
-        server.createList('lineItem', 50, {
+        server.createList('lineItem', 100, {
             document
         });
     }
