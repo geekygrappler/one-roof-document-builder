@@ -1,6 +1,9 @@
 <p>
     {{input type="text" value=lineItem.itemName}},
-    {{input type="text" value=quantityAsString}}
+    {{input type="text" value=quantityAsString}},
+    {{input type="text" value=lineItem.rate}},
+    {{format-money lineItem.total symbol="£" }}
+    <button {{action "deleteLineItem"}}>Delete</button>
 </p>
 
 {{yield}}

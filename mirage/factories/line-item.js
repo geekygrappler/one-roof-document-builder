@@ -2,5 +2,6 @@ import { Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
     itemName() { return faker.commerce.productName(); },
-    quantity: 1
+    quantity: 1,
+    rate() { return faker.commerce.price(); }
 });

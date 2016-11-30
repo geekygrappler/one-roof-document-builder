@@ -1,4 +1,5 @@
-<h3>Line Item List, {{listTotal}}</h3>
+<h3>Line Item List, {{format-money listTotal symbol="£"}}</h3>
+{{new-line-item document=document}}
 <div style="position: relative; width: 100%; height: 600px;">
     {{#ember-collection items=lineItems cell-layout=(fixed-grid-layout 800 50) as |lineItem index|}}
         {{line-item lineItem=lineItem}}

@@ -9,5 +9,14 @@ export default Ember.Component.extend({
         set(_, value) {
             this.set('lineItem.quantity', parseInt(value));
         }
-    })
+    }),
+    actions: {
+        deleteLineItem() {
+            // Ember.Object.destroy() immediately removes (including relationship) and updates view
+            // DS.Model.destroyRecord() does not update view for some reason.
+            this.get('lineItem').destroy();
+            // Presist on back end
+            this.get('lineItem').destroyRecord();
+        }
+    }
 });

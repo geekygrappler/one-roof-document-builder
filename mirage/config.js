@@ -24,6 +24,9 @@ export default function() {
     http://www.ember-cli-mirage.com/docs/v0.2.x/shorthands/
     */
     this.get('/documents/:id');
+    this.patch('documents/:id');
     this.get('/line-items/:id');
+    this.post('/line-items');
+    this.delete('/line-items/:id');
     this.get('/items/:id');
 }
