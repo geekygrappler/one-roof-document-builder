@@ -1,15 +1,17 @@
 import DS from 'ember-data';
 import Ember from 'ember';
+const { attr, belongsTo } = DS;
 const { computed } = Ember;
 
 export default DS.Model.extend({
-    itemName: DS.attr('string'),
-    notes: DS.attr('string'),
-    quantity: DS.attr('number', { defaultValue: 1 }),
-    unit: DS.attr('string'),
-    section: DS.belongsTo('section'),
-    rate: DS.attr('number'),
-    document: DS.belongsTo('document'),
+    itemName: attr('string'),
+    notes: attr('string'),
+    quantity: attr('number', { defaultValue: 1 }),
+    unit: attr('string'),
+    section: belongsTo('section'),
+    rate: attr('number'),
+    document: belongsTo('document'),
+    location: belongsTo('location'),
     total: computed('rate', 'quantity', function () {
         return this.get('rate') * this.get('quantity');
     })

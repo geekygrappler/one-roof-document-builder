@@ -25,8 +25,12 @@ export default function() {
     */
     this.get('/documents/:id');
     this.patch('documents/:id');
+
     this.get('/line-items/:id');
     this.post('/line-items');
     this.delete('/line-items/:id');
+
     this.get('/items/:id');
+
+    this.get('/locations/:id');
 }

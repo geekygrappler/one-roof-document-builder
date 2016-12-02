@@ -3,5 +3,6 @@ const { attr, hasMany } = DS;
 
 export default DS.Model.extend({
     title: attr('string'),
-    lineItems: hasMany('lineItem')
+    lineItems: hasMany('lineItem'),
+    locations: hasMany('location')
 });
