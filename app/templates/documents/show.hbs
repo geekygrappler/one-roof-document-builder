@@ -2,14 +2,11 @@
     {{model.title}}
 </h2>
 
-{{!-- {{new-section document=model}} --}}
-
-<div style="width: 40%; display: inline-block;">
-    {{line-item-list lineItems=model.lineItems document=model}}
-</div>
-
-<div style="width: 50%; display: inline-block;">
-    {{line-item-list lineItems=model.lineItems document=model}}
+<div>
+    {{#each-in groupedLineItems as |location lineItems|}}
+        <h3>{{location}}</h3>
+        {{line-item-list lineItems=lineItems document=model}}
+    {{/each-in}}
 </div>
 
 {{outlet}}
