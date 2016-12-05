@@ -12,6 +12,7 @@ export default DS.Model.extend({
     rate: attr('number'),
     document: belongsTo('document'),
     location: belongsTo('location'),
+    stage: belongsTo('stage'),
     total: computed('rate', 'quantity', function () {
         return this.get('rate') * this.get('quantity');
     })

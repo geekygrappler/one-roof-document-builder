@@ -1,6 +1,7 @@
 <p>
     {{input type="text" value=lineItem.itemName}},
     {{lineItem.location.name}},
+    {{lineItem.stage.name}},
     {{input type="text" value=quantityAsString}},
     {{input type="text" value=lineItem.rate}},
     {{format-money lineItem.total symbol="£" }}

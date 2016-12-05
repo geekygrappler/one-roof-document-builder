@@ -33,4 +33,6 @@ export default function() {
     this.get('/items/:id');
 
     this.get('/locations/:id');
+
+    this.get('/stages/:id');
 }

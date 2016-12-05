@@ -3,9 +3,8 @@
 </h2>
 
 <div>
-    {{#each-in groupedLineItems as |location lineItems|}}
-        <h3>{{location}}</h3>
-        {{line-item-list lineItems=lineItems document=model}}
+    {{#each-in groupedLineItems as |viewGroup lineItems|}}
+        {{line-item-list lineItems=lineItems viewGroup=viewGroup document=model}}
     {{/each-in}}
 </div>
 

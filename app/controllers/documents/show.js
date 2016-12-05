@@ -5,9 +5,12 @@ import _ from 'underscore';
 const { computed } = Ember;
 
 export default Ember.Controller.extend({
+    queryParams: ['viewBy'],
+    viewBy: null,
     groupedLineItems: computed('model.lineItems.@each.location', function() {
         const lineItems = this.get('model').get('lineItems').toArray();
-        return this.sortObject(_.groupBy(lineItems, (lineItem) => lineItem.get('location').get('name')));
+        const viewBy = this.get('viewBy');
+        return this.sortObject(_.groupBy(lineItems, (lineItem) => lineItem.get(viewBy).get('name')));
     }),
 
     // Will sort an object by it's keys.
