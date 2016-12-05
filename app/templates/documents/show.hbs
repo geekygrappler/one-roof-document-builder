@@ -2,6 +2,14 @@
     {{model.title}}
 </h2>
 
+<p>
+    View by:
+    <select onchange={{action (mut viewBy) value="target.value"}}>
+        <option value="stage" selected={{eq viewBy "stage"}}>Stages</option>
+        <option value="location" selected={{eq viewBy "location"}}>Locations</option>
+    </select>
+</p>
+
 <div>
     {{#each-in groupedLineItems as |viewGroup lineItems|}}
         {{line-item-list lineItems=lineItems viewGroup=viewGroup document=model}}
