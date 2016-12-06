@@ -13,7 +13,7 @@ export default function(server) {
     for (let document of documents) {
         let locations = server.createList('location', 5);
         let stages = server.createList('stage', 5);
-        server.createList('lineItem', 10, {
+        server.createList('lineItem', 300, {
             document,
             location() { return locations[parseInt(Math.random() * 5)]; },
             stage() { return stages[parseInt(Math.random() * 5)]; },
