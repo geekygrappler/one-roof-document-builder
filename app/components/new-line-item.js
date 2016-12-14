@@ -8,6 +8,7 @@ export default Ember.Component.extend({
     actions: {
         createLineItem() {
             this.get('lineItem').set('document', this.get('document'));
+            this.get('lineItem').set('stage', this.get('stage'));
             this.get('lineItem').save().then(() => {
                 this.set('lineItem', this.get('store').createRecord('lineItem'));
             });

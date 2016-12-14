@@ -8,7 +8,6 @@ export default DS.Model.extend({
     notes: attr('string'),
     quantity: attr('number', { defaultValue: 1 }),
     unit: attr('string'),
-    section: belongsTo('section'),
     rate: attr('number'),
     document: belongsTo('document'),
     location: belongsTo('location'),

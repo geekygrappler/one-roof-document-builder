@@ -1,7 +1,8 @@
 import DS from 'ember-data';
-const { attr, belongsTo } = DS;
+const { attr, belongsTo, hasMany } = DS;
 
 export default DS.Model.extend({
     name: attr('string'),
-    document: belongsTo('document')
+    document: belongsTo('document'),
+    lineItems: hasMany('lineItem')
 });

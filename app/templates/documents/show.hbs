@@ -2,7 +2,9 @@
     {{model.title}}, {{format-money model.total symbol="£" }}
 </h2>
 
-<p>
+{{outlet}}
+
+{{!-- <p>
     View by:
     <select onchange={{action (mut viewBy) value="target.value"}}>
         <option value="stage" selected={{eq viewBy "stage"}}>Stages</option>
@@ -10,10 +12,16 @@
     </select>
 </p>
 
+<p>
+    Viewing:
+    <select onChange={{action (mut currentView) value="target.value"}}>
+        {{#each viewGroup as |group|}}
+            <option value={{group}} selected={{eq currentView group}}>{{group.name}}</option>
+        {{/each}}
+    </select>
+</p>
 <div>
     {{#each-in groupedLineItems as |viewGroup lineItems|}}
         {{line-item-list lineItems=lineItems viewGroup=viewGroup document=model}}
     {{/each-in}}
-</div>
-
-{{outlet}}
+</div> --}}

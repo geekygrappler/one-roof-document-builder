@@ -5,14 +5,21 @@ import _ from 'underscore';
 const { computed, defineProperty } = Ember;
 
 export default Ember.Controller.extend({
-    queryParams: ['viewBy'],
+    queryParams: ['viewBy', 'currentView'],
     viewBy: "location",
+    currentView() {
+        return this.get('model').get('locations').get('firstObject');
+    },
 
     init() {
         this._super(...arguments);
         let viewBy = this.get('viewBy');
         defineProperty(this, 'viewByPath', computed.alias(`model.lineItems.@each.${viewBy}`));
     },
+
+    viewGroup: computed('viewBy', function() {
+        return this.get('model').get(`${this.get('viewBy')}s`);
+    }),
 
     groupedLineItems: computed('viewByPath', 'viewBy', function() {
         const lineItems = this.get('model').get('lineItems').toArray();
