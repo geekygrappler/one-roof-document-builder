@@ -1,0 +1,10 @@
+<h2>Stages</h2>
+
+{{#each model as |stage|}}
+    {{#link-to "documents.show.stages.show" stage}}{{stage.name}}{{/link-to}},
+{{/each}}
+<p>
+    {{#link-to "documents.show.locations.show" defaultLocation}}View By Locations{{/link-to}}
+</p>
+
+{{outlet}}
